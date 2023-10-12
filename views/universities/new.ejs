@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <h1 class="text-center">Join the Community</h1>
+    <div class="col-md-6 offset-md-3">
+        <!-- tell the browser to not validate the form and let bootstrap (needs-validation class) take over -->
+        <form class="needs-validation" action="/universities" method="POST" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <!-- [] is to group things together when sending a post request -->
+                <input class="form-control" type="text" name="university[name]" id="name" required>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="university[location]" id="location" required>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="tuition" class="form-label">Tuition</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="tuition" placeholder="0" aria-label="price"
+                        aria-describedby="price-label" name="university[tuition]" required>
+                </div>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" name="university[description]" id="description"
+                    required></textarea>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
+            <div class="mb-3">
+                <Button class="btn btn-success">Add University</Button>
+            </div>
+        </form>
+
+        <a href="/universities">Back to All Universities</a>
+    </div>
+</div>

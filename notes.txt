@@ -1,0 +1,11 @@
+1. To use mongo:
+    mongosh
+    use real-university
+    db.universities.find() to access all universities in the test database
+
+2. To run the application:
+    nodemon app.js, or to run in production mode: NODE_ENV=production node app.js
+    go to localhost:3000
+
+3. To reseed the dev database:
+    node seeds/index.js
