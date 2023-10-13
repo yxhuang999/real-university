@@ -21,7 +21,7 @@ const universityRoutes = require('./routes/uniRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
 const userRoutes = require('./routes/userRoutes');
 
-const dbUrl = 'mongodb://localhost:27017/real-university' || process.env.DB_URL;
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
 
 // connect to mongoose
@@ -54,7 +54,7 @@ const store = MongoStore.create({
         secret: 'thisshouldbeabettersecret!'
     }
 });
-store.on("error", function(e) {
+store.on("error", function (e) {
     console.log('Session Store Error', e)
 });
 
